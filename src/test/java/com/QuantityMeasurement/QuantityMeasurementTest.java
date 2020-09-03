@@ -1,35 +1,30 @@
 package com.QuantityMeasurement;
 
+import com.QuantityMeasurement.com.QuantityMeasurement.Unit;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class QuantityMeasurementTest {
 
-    int length1InFeet;
-    int length2InFeet;
-    int unit1InInch;
-    int unit2InInch;
+
     @Before
     public void setup() {
-        length1InFeet = 0;
-        length2InFeet = 0;
-        unit1InInch = 0;
-        unit2InInch = 0;
+
     }
 
     @Test
     public void given0feetand0feet_ShouldReturnEqual(){
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement(length1InFeet);
-        QuantityMeasurement quantityMeasurement2 = new QuantityMeasurement(length2InFeet);
-        Assert.assertEquals(quantityMeasurement1,quantityMeasurement2);
+        Length feet1 = new Length(Unit.FEET,0);
+        Length feet2 = new Length(Unit.FEET,0);
+        Assert.assertEquals(feet1,feet2);
     }
 
     @Test
     public void given0Inchand0Inch_ShouldReturnEqual(){
-        QuantityMeasurement quantityMeasurement1 = new QuantityMeasurement(unit1InInch);
-        QuantityMeasurement quantityMeasurement2 = new QuantityMeasurement(unit2InInch);
-        Assert.assertEquals(quantityMeasurement1,quantityMeasurement2);
+        Length inch1 = new Length(Unit.INCH,0);
+        Length inch2 = new Length(Unit.INCH,0);
+        Assert.assertEquals(inch1,inch2);
     }
 
 
