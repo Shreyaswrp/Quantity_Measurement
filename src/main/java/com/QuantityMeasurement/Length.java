@@ -13,10 +13,10 @@ public class Length {
     }
 
     @Override
-    public boolean equals(Object o){
-        if (this == o) return true;
-        if ( o == null || getClass() != o.getClass()) return false;
-        Length length = (Length) o;
-        return Double.compare(length.value, value) == 0;
+    public boolean equals(Object that){
+        if (this == that) return true;
+        if ( that == null || getClass() != that.getClass()) return false;
+        Length length = (Length) that;
+        return Double.compare(length.value, value) == 0 && this.unit == length.unit;
     }
 }

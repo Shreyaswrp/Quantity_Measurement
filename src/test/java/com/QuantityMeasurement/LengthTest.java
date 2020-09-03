@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class QuantityMeasurementTest {
+public class LengthTest {
 
 
     @Before
@@ -44,5 +44,14 @@ public class QuantityMeasurementTest {
         boolean equals = inch1.equals(inch2);
         Assert.assertFalse(equals);
     }
+
+    @Test
+    public void given1Inchand1Feet_ShouldReturnNotEqual(){
+        Length inch = new Length(Unit.INCH,1);
+        Length feet = new Length(Unit.FEET,1);
+        boolean equals = inch.equals(feet);
+        Assert.assertFalse(equals);
+    }
+
 
 }
