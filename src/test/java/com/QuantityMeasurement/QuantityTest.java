@@ -11,16 +11,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class QuantityTest {
 
-    @Mock
-    Quantity length1;
-    Quantity length2;
-    Unit unit;
-
     @Test
     public void given0FeetAnd0FeetLength_ShouldReturnEqualLength() {
-        Quantity unit1 = new Quantity(Unit.feet.getBaseUnit(), 0);
-        Quantity unit2 = new Quantity(Unit.feet.getBaseUnit(), 0);
-        Assert.assertEquals(unit1, unit2);
+        Quantity  quantity1 = new Quantity(Unit.feet.getBaseUnit(), 0);
+        Quantity quantity2 = new Quantity(Unit.feet.getBaseUnit(), 0);
+        Assert.assertEquals(quantity1, quantity2);
     }
 
     @Test

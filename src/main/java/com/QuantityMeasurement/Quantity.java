@@ -6,7 +6,6 @@ public class Quantity {
 
     private final double value;
 
-
     public Quantity(double unit, double value) {
         this.value = unit * value;
     }
@@ -14,6 +13,7 @@ public class Quantity {
     public static double add(Quantity quantity1, Quantity quantity2) {
         return quantity1.value + quantity2.value;
     }
+
     public static double temperatureConversion(double temperature) {
         return (temperature * 9 / 5) + 32;
     }
@@ -25,7 +25,4 @@ public class Quantity {
         Quantity quantity = (Quantity)that;
         return Double.compare(quantity.value,value) == 0 ;
     }
-
-
-
 }
