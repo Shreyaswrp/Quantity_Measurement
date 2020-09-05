@@ -29,7 +29,8 @@ public class QuantityTest {
     public void givenFeet_WhenCheckedOnNull_ShouldReturnNotEqualLength() {
         Quantity unit1 = null;
         Quantity unit2 = new Quantity(Unit.feet.getBaseUnit(), 1);
-        Assert.assertNotEquals(unit1, unit2);
+        Boolean equals = unit2.equals(unit1);
+        Assert.assertFalse(equals);
     }
 
     @Test
@@ -42,7 +43,7 @@ public class QuantityTest {
     }
 
     @Test
-    public void givenSameFeet_ShouldReturnEqual() {
+    public void givenSameFeet_ShouldReturnEqualLength() {
         Quantity unit1 = new Quantity(Unit.feet.getBaseUnit(), 1);
         Quantity unit2 = new Quantity(Unit.feet.getBaseUnit(), 1);
         Assert.assertEquals(unit1, unit2);
@@ -66,11 +67,12 @@ public class QuantityTest {
     public void givenInch_WhenCheckedOnNull_ShouldReturnNotEqual() {
         Quantity unit1 = null;
         Quantity unit2 = new Quantity(Unit.inch.getBaseUnit(), 1);
-        Assert.assertNotEquals(unit1, unit2);
+        Boolean equals = unit2.equals(unit1);
+        Assert.assertFalse(equals);
     }
 
     @Test
-    public void givenInch_WhenSameRef_ShouldReturnEqual() {
+    public void givenInch_WhenSameReference_ShouldReturnEqual() {
         Quantity unit1 = new Quantity(Unit.inch.getBaseUnit(), 1);
         Quantity unit2 = new Quantity(Unit.inch.getBaseUnit(), 2);
         unit2 = unit1;
@@ -79,7 +81,7 @@ public class QuantityTest {
     }
 
     @Test
-    public void givenSameInch_ShouldReturnEqual() {
+    public void givenSameInch_ShouldReturnEqualLength() {
         Quantity unit1 = new Quantity(Unit.inch.getBaseUnit(), 1);
         Quantity unit2 = new Quantity(Unit.inch.getBaseUnit(), 1);
         Assert.assertEquals(unit1, unit2);
@@ -90,6 +92,13 @@ public class QuantityTest {
         Quantity unit1 = new Quantity(Unit.feet.getBaseUnit(), 1);
         Quantity unit2 = new Quantity(Unit.inch.getBaseUnit(), 12);
         Assert.assertEquals(unit1, unit2);
+    }
+
+    @Test
+    public void given1FeetAnd13InchesLength_ShouldNotReturnEqualLength() {
+        Quantity unit1 = new Quantity(Unit.feet.getBaseUnit(), 1);
+        Quantity unit2 = new Quantity(Unit.inch.getBaseUnit(), 13);
+        Assert.assertNotEquals(unit1, unit2);
     }
 
     @Test
@@ -146,6 +155,13 @@ public class QuantityTest {
         Quantity unit1 = new Quantity(Unit.inch.getBaseUnit(), 2);
         Quantity unit2 = new Quantity(Unit.cm.getBaseUnit(), 5);
         Assert.assertEquals(unit1, unit2);
+    }
+
+    @Test
+    public void given2InchAnd7cmLength_ShouldNotReturnEqualLength() {
+        Quantity unit1 = new Quantity(Unit.inch.getBaseUnit(), 2);
+        Quantity unit2 = new Quantity(Unit.cm.getBaseUnit(), 7);
+        Assert.assertNotEquals(unit1, unit2);
     }
 
     @Test
