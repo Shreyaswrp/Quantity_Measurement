@@ -17,13 +17,13 @@ public enum Unit {
     celsius(1),
     fahrenheit(1);
 
-    private final double baseUnit;
+    private final double BASE_UNIT;
 
     Unit(double baseUnit) {
-        this.baseUnit = baseUnit;
+        this.BASE_UNIT = baseUnit;
     }
 
     public double getBaseUnit() {
-        return baseUnit;
+        return BASE_UNIT;
     }
 }

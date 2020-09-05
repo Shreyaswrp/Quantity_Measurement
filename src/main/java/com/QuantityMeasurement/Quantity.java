@@ -4,14 +4,14 @@ import com.QuantityMeasurement.com.QuantityMeasurement.Unit;
 
 public class Quantity {
 
-    private final double value;
+    private final double VALUE;
 
     public Quantity(double unit, double value) {
-        this.value = unit * value;
+        this.VALUE = unit * value;
     }
 
     public static double add(Quantity quantity1, Quantity quantity2) {
-        return quantity1.value + quantity2.value;
+        return quantity1.VALUE + quantity2.VALUE;
     }
 
     public static double temperatureConversion(double temperature) {
@@ -23,6 +23,6 @@ public class Quantity {
         if (this == that) return true;
         if ( that == null || getClass() != that.getClass()) return false;
         Quantity quantity = (Quantity)that;
-        return Double.compare(quantity.value,value) == 0 ;
+        return Double.compare(quantity.VALUE,VALUE) == 0 ;
     }
 }
